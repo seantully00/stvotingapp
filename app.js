@@ -1,5 +1,15 @@
 var myapp = angular.module("myApp", []);
 
+myapp.config(function($routeProvider) {
+  $routeProvider.when('/', {
+    controller: 'MainController',
+    templateUrl: '/index.html'
+  })
+  .otherwise({
+    redirectTo: '/'
+  });
+});
+
 var express = require('express');
 var routes = require('./app/routes/index.js');
 var mongoose = require('mongoose');
@@ -18,7 +28,7 @@ app.use('/public', express.static(process.cwd() + '/public'));
 app.use('/common', express.static(process.cwd() + '/app/common'));
 
 app.use(session({
-	secret: 'secretClementine',
+	secret: 'stvotingapp',
 	resave: false,
 	saveUninitialized: true
 }));
