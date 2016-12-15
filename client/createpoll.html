@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<title>Votejere</title>
+		
+		<link href="/public/css/main.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<header>
+		<p>Welcome, <span id="display-name"></span>!</p>
+		<a class="menu" href="/profile">Profile</a>
+		<p>|</p>
+		<a class="menu" href="/logout">Logout</a>
+	</header>
+
+	<body>
+		<div class="container">
+			<div class="createpoll">
+		    <form id="createpoll">
+		    	<b>Title:<br>
+                <input type="text" id="title"><br></b>
+                <b>Question:<br>
+                <input type="text" id="question"><br></b>
+                <b>Choices:<br>
+                <input type="text" id="choice1"><br></b>
+                <input type="text" id="choice2"><br></b>
+            </form>
+		</div>
+		</div>
+		
+		<div class="container">
+			<div class="btn-container" id="addChoices">
+				<button type="button" class="btn-add" onclick="addChoice();"></a>>Add Choice</button>
+			</div>
+		</div>		
+	
+		<div class="container">
+			<div class="btn-container">
+				<button type="submit" href="/" onclick="savePoll();">Save Poll</button>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="controllers/pollHandler.server.js"></script>
+		<script type="text/javascript" src="controllers/createpollchoices.js"></script>		
+	</body>
+
+</html>
